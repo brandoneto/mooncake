@@ -3,13 +3,13 @@ name: Docker
 on:
   push:
     branches: [ "trunk" ]
-    paths-ignore: .github/azure-kubernetes-service.yml
+    paths-ignore: .github/workflows/azure-kubernetes-service.yml
     # Publish semver tags as releases.
     
     tags: [ 'v*.*.*' ]
   pull_request:
     branches: [ "trunk" ]
-    paths-ignore: .github/azure-kubernetes-service.yml
+    paths-ignore: .github/workflows/azure-kubernetes-service.yml
 
 env:
   # Use docker.io for Docker Hub if empty
