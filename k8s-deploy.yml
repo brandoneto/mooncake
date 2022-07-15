@@ -49,3 +49,21 @@ spec:
         ports:
         - containerPort:  8080
           name:  mooncake
+---
+  apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    name: cakemoon
+  spec:
+    ingressClassName: nginx
+    rules:
+      - host: 
+        http:
+          paths:
+            - pathType: Prefix
+              backend:
+                service:
+                  name: mooncake
+                  port:
+                    number: 80
+              path: /
